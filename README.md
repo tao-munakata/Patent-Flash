@@ -1,36 +1,28 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Patent-Flash
 
-## Getting Started
+音声・テキストで入力したアイデアから AI がキーワードを抽出し、ゲーム感覚のUIで類似特許を絞り込める一次調査高速化Webアプリ。
 
-First, run the development server:
+## セットアップ
 
 ```bash
+cp .env.local.example .env.local
+# .env.local に ANTHROPIC_API_KEY を記入（省略可、モックで動作）
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+http://localhost:3000 にアクセス。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 画面構成
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **入力** (`/`) — テキスト入力 + Web Speech API 音声入力
+2. **バブル** (`/results`) — キーワードクラウド + DnD 絞り込みバケツ
+3. **フィルタ** (`/filter`) — 業界タグ選択
+4. **詳細** (`/details`) — 特許カード + 類似度・回避設計ヒント
 
-## Learn More
+## 環境変数
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| 変数 | 説明 |
+|------|------|
+| `ANTHROPIC_API_KEY` | Claude API キー（未設定時はモックデータ） |
+| `SERPAPI_KEY` | Google Patents 検索用（未設定時はモックデータ） |
