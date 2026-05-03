@@ -1,0 +1,11 @@
+{
+  "searchInput":   "#s01_srchCondtn_txtSimpleSearch",
+  "searchButton":  "a#s01_srchBtn_btnSearch",
+  "hitCountMsg":   "li#patentUtltyIntnlDocLst_searchResultMsg",
+  "hitCountTab":   "#s01_searchRsltSelect_tabPatentsUtility span",
+  "resultTable":   "table#patentUtltyIntnlSimpleBibLst tbody tr",
+  "pubNo":         "td:nth-child(1)",
+  "pubDate":       "td:nth-child(4)",
+  "title":         "td:nth-child(5)",
+  "applicant":     "td:nth-child(6)"
+}

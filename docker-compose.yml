@@ -1,0 +1,11 @@
+services:
+  patchat-wrapper:
+    build: .
+    container_name: patchat_wrapper
+    restart: unless-stopped
+    ports:
+      - "3003:3100"
+    environment:
+      - PORT=3100
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
